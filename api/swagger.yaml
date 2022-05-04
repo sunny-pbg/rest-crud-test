@@ -125,8 +125,6 @@ paths:
       summary: "get for user"
       description: "Returns a list of user"
       operationId: "getUser"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       parameters: []
@@ -146,6 +144,8 @@ paths:
       summary: "Create user"
       description: "This can only be done by the logged in user."
       operationId: "createUser"
+      consumes:
+      - "application/json"
       produces:
       - "application/json"
       parameters:
