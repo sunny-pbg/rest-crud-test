@@ -8,6 +8,7 @@ var app = require('connect')();
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var serverPort = 8080;
+var cors = require('cors')
 
 global.users = new Map();
 global.users.set("449d19db-ec6f-409e-a82b-d9c29dffdfeb",
@@ -48,6 +49,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
+  app.use(cors());
 
   // Start the server
   http.createServer(app).listen(serverPort, function () {
